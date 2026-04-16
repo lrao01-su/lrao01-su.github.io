@@ -7,9 +7,11 @@ function About() {
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">About</h1>
 
         <div className="mb-8">
-          {/* TODO: replace with actual profile photo */}
-          <div className="w-28 h-28 rounded-xl bg-gray-100 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D] flex items-center justify-center text-gray-400 dark:text-gray-600 text-sm mb-6">
-            Photo
+          <div className="w-28 h-28 rounded-xl relative overflow-hidden shadow-md">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FF5733] via-[#FF8F6B] to-[#FFB899] dark:from-[#FF6B47] dark:via-[#CC4527] dark:to-[#1A0A05]"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-3xl font-bold text-white/90 tracking-tight select-none" style={{ fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace' }}>LR</span>
+            </div>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaExternalLinkAlt, FaArrowRight } from 'react-icons/fa/index';
 import { SiPython, SiReact, SiJavascript, SiPostgresql, SiGit } from 'react-icons/si/index';
+import ProjectShuffle from '../components/ProjectShuffle';
 
 function Home() {
   const featuredProjects = [
@@ -80,48 +81,49 @@ function Home() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 xl:py-20">
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-8 lg:gap-12 xl:gap-16 mb-16 lg:mb-24">
-        <div className="w-full md:w-3/5 max-w-2xl">
-          <div className="flex flex-wrap gap-2 mb-4">
-            <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Data Ops</span>
-            <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Analytics Engineering</span>
-            <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Product</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4 leading-tight">
-            Linjing <span className="text-[#FF5733] dark:text-[#FF6B47]">Rao</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-3 leading-relaxed">
-            Transit data operations analyst at <span className="font-semibold text-[#FF5733] dark:text-[#FF6B47]">Citymapper</span> (Via Transportation) — a transit app serving millions daily across 120+ cities.
-          </p>
-          <p className="text-base text-gray-500 dark:text-gray-400 mb-8">
-            Cornell Tech &middot; Urban mobility data &middot; GTFS pipelines &middot; Applied AI/ML
-          </p>
+      <div className="mb-16 lg:mb-24">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+          {/* Left: intro */}
+          <div className="w-full lg:w-1/2">
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+              Transit data operations analyst at <span className="font-semibold text-[#FF5733] dark:text-[#FF6B47]">Citymapper</span> (Via Transportation) — serving millions daily across 120+ cities.
+            </p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+              Linjing Rao
+            </h1>
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Data Ops</span>
+              <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Analytics Engineering</span>
+              <span className="font-mono text-xs font-medium px-2.5 py-1 rounded-md bg-[#FFF1ED] dark:bg-[#FF573320] text-[#FF5733] dark:text-[#FF6B47] border border-[#FFD5C8] dark:border-[#FF573340]">Product</span>
+            </div>
+            <p className="text-base text-gray-500 dark:text-gray-400 mb-6">
+              Cornell Tech &middot; Urban mobility data &middot; GTFS pipelines &middot; Applied AI/ML
+            </p>
 
-          <div className="flex items-center gap-4 mb-8">
-            <a href="https://github.com/lrao01-su" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">
-              <FaGithub className="w-6 h-6" />
-            </a>
-            <a href="https://linkedin.com/in/linjingrao" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">
-              <FaLinkedin className="w-6 h-6" />
-            </a>
-            <span className="text-gray-300 dark:text-gray-600">|</span>
-            <a href="mailto:Linjing.rao@gmail.com" className="text-base text-gray-500 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">Email me</a>
+            <div className="flex items-center gap-4 mb-6">
+              <a href="https://github.com/lrao01-su" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">
+                <FaGithub className="w-6 h-6" />
+              </a>
+              <a href="https://linkedin.com/in/linjingrao" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">
+                <FaLinkedin className="w-6 h-6" />
+              </a>
+              <span className="text-gray-300 dark:text-gray-600">|</span>
+              <a href="mailto:Linjing.rao@gmail.com" className="text-base text-gray-500 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">Email me</a>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="#/projects" className="inline-flex items-center justify-center gap-2 bg-[#FF5733] dark:bg-[#FF6B47] text-white px-6 py-3 rounded-lg hover:bg-[#E04E2D] dark:hover:bg-[#FF5733] transition font-medium text-base">
+                View Projects <FaArrowRight className="w-3.5 h-3.5" />
+              </a>
+              <a href="#/resume" className="inline-flex items-center justify-center gap-2 border border-gray-300 dark:border-[#30363D] text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg hover:border-[#FF5733] dark:hover:border-[#FF6B47] hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition font-medium text-base">
+                Resume
+              </a>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href="#/projects" className="inline-flex items-center justify-center gap-2 bg-[#FF5733] dark:bg-[#FF6B47] text-white px-6 py-3 rounded-lg hover:bg-[#E04E2D] dark:hover:bg-[#FF5733] transition font-medium text-base">
-              View Projects <FaArrowRight className="w-3.5 h-3.5" />
-            </a>
-            <a href="#/resume" className="inline-flex items-center justify-center gap-2 border border-gray-300 dark:border-[#30363D] text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg hover:border-[#FF5733] dark:hover:border-[#FF6B47] hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition font-medium text-base">
-              Resume
-            </a>
-          </div>
-        </div>
-
-        <div className="hidden md:flex w-2/5 justify-center items-start">
-          {/* TODO: replace with actual profile photo */}
-          <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-2xl shadow-lg bg-gray-100 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D] flex items-center justify-center text-gray-400 dark:text-gray-600 text-sm">
-            Photo
+          {/* Right: interactive project shuffle */}
+          <div className="w-full lg:w-1/2">
+            <ProjectShuffle />
           </div>
         </div>
       </div>
