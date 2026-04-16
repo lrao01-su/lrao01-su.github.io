@@ -88,6 +88,7 @@ function Projects() {
     const skillSet = new Set();
     projects.forEach(p => p.technologies.forEach(t => skillSet.add(t)));
     return Array.from(skillSet).sort();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const filteredProjects = activeFilters.length === 0

@@ -2,7 +2,7 @@
   "name": "ljrao.github.io",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://ljrao.github.io",
+  "homepage": "https://lrao01-su.github.io/ljrao.github.io",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "react": "^18.2.0",

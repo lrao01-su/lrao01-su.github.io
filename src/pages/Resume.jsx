@@ -1,4 +1,4 @@
-import { FaBriefcase, FaGraduationCap, FaChartLine, FaDownload } from 'react-icons/fa/index';
+import { FaBriefcase, FaGraduationCap, FaChartLine } from 'react-icons/fa/index';
 
 function Resume() {
   const experience = [
@@ -121,14 +121,6 @@ function Resume() {
               <a href="https://github.com/lrao01-su" target="_blank" rel="noopener noreferrer" className="text-[#FF5733] dark:text-[#FF6B47] hover:underline text-sm">GitHub</a>
             </div>
           </div>
-          <a
-            href={process.env.PUBLIC_URL + "/resume.pdf"}
-            download
-            className="inline-flex items-center gap-2 bg-[#FF5733] dark:bg-[#FF6B47] text-white px-5 py-2.5 rounded-lg hover:bg-[#E04E2D] dark:hover:bg-[#FF5733] transition font-medium text-sm shrink-0"
-          >
-            <FaDownload className="w-3.5 h-3.5" />
-            Download PDF
-          </a>
         </div>
 
         {/* Timeline */}
