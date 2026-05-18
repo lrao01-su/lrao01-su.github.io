@@ -1,62 +1,57 @@
-import { FaBriefcase, FaGraduationCap, FaChartLine } from 'react-icons/fa/index';
+import { FaBriefcase, FaGraduationCap, FaChartLine, FaDownload } from 'react-icons/fa/index';
 
 function Resume() {
   const experience = [
     {
       type: 'experience',
-      title: 'Data Analyst',
+      title: 'City Operations Data Analyst',
       company: 'Via – Citymapper',
       location: 'New York, NY',
       period: 'Oct 2024 – Present',
       description: [
-        'Triaged 2,500+ user-reported escalations via Zendesk, Airtable, and PagerDuty; surfaced 248 high-priority issues that directly shaped Product and Engineering quarterly priorities while maintaining same-day SLA.',
-        'Owned the NYC Citymapper App Data operations, managing 10–15+ vendor data feeds across daily pipeline builds and weekly production deployments, ensuring geospatial routing accuracy for 8M+ residents.',
-        'Served as primary operational liaison for vendor partners across 7 geographic areas (Americas, UK/EMEA, APAC); coordinated project management and go-live execution for 50+ regional launches.',
-        'Reduced manual QA overhead by 75% by identifying automation opportunities and developing a Python comparison tool; authored dashboard specifications monitoring operational health across 120+ production regions.',
-        'Authored deployment guide standardizing in-app advertisement integration request handling, enabling consistent multi-timezone service delivery across teams in NYC, London, and APAC.',
-        'Led the 2026 US Region Improvement Plan across 5 metropolitan regions: synthesized data quality assessments and competitive benchmarking into a prioritized program adopted by Product and Engineering for OKR planning.'
+        'NYC region owner for routing QA, go-live coordination, and transit agency partnerships (NJ Transit, Jersey City PATH). Shipped 50+ region expansions and native intermodal booking integration connecting on-demand rideshare with public transit.',
+        'Built an agentic AI pipeline to automate MTA planned disruption processing, eliminating 2.5 hrs/week of manual work for 8M+ daily riders. Led geospatial audit correcting 1,000+ bus stop locations against OpenStreetMap.',
       ],
-      skills: ['Python', 'SQL', 'GTFS / GTFS-RT', 'Zendesk', 'PagerDuty', 'Airtable', 'Grafana', 'AWS', 'Jenkins CI/CD']
+      skills: ['Python', 'SQL (AWS Athena)', 'GTFS / GTFS-RT', 'Grafana', 'Airtable', 'ArcGIS', 'Geospatial Analysis']
     },
     {
       type: 'experience',
-      title: 'Data Researcher',
+      title: 'Strategy & Urban Research Analyst',
       company: 'Urban Tech Hub',
       location: 'New York, NY',
       period: 'Sep 2022 – Aug 2023',
-      subtitle: 'Multifamily Rezoning Visualization Project',
       description: [
-        'Led problem definition and metric framing for a 0→1 product initiative, developing hypotheses and MVP success criteria through user interviews and survey-based analysis.',
-        'Analyzed and visualized large-scale geospatial and demographic datasets (zoning layers, population, census indicators) using ArcGIS and Python; translated complex spatial data into actionable insights for cross-functional stakeholders.'
+        'Led product development for Open Zoning, a multifamily rezoning visualization tool — defined MVP criteria through community interviews and transformed unstructured zoning code into structured datasets for city stakeholders.',
+        'Analyzed geospatial and demographic datasets (zoning layers, census indicators) using ArcGIS and Python; insights published in the annual NYC Urban Tech Ecosystem Report.',
       ],
       skills: ['Python', 'ArcGIS', 'Geospatial Analysis', 'User Research', 'Data Visualization']
     },
     {
       type: 'experience',
-      title: 'Teaching Assistant – INFO5410 Urban Systems',
-      company: 'Cornell Tech',
-      location: 'New York, NY',
-      period: 'Fall 2023',
+      title: 'Intern, Computational Design',
+      company: 'LWK+Partners',
+      location: '',
+      period: 'May 2021 – Jul 2021',
       description: [
-        'Designed and taught urban data curriculum to 40+ master\'s students; led weekly workshops on ArcGIS and Python spatial analysis using live NYC Open Data.'
+        'Built a parametric design tool using geospatial analysis and 3D modeling for the Huya HQ project, reducing facade modeling time from days to minutes.',
       ],
-      skills: ['ArcGIS', 'Python', 'NYC Open Data', 'Teaching']
+      skills: ['Geospatial Analysis', '3D Modeling', 'Parametric Design']
     }
   ];
 
   const education = [
     {
       type: 'education',
-      title: 'Master of Applied Information Science and Information System',
+      title: 'Master of Applied Information Science',
       company: 'Cornell University – Cornell Tech',
       location: 'New York, NY',
       period: 'Aug 2022 – May 2024',
       subtitle: 'Urban Tech Concentration',
       description: [
         'GPA: 3.9 | Admitted with Merit Scholarship',
-        'Coursework: Machine Learning, Statistical Analysis, Data Visualization, Product Management, UI/UX'
+        'Coursework: Urban Mobility Systems, Product Management, Data Visualization, Machine Learning, Operations Strategy'
       ],
-      skills: ['Machine Learning', 'Statistical Analysis', 'Data Visualization', 'Product Management']
+      skills: ['Machine Learning', 'Data Visualization', 'Product Management', 'Urban Mobility']
     },
     {
       type: 'education',
@@ -72,21 +67,19 @@ function Resume() {
   ];
 
   const skills = {
-    'Programming Languages': ['Python', 'SQL', 'YAML', 'C#'],
-    'Analytics & Operations': [
-      'Operational metrics',
-      'KPI definition',
-      'Trend analysis',
-      'A/B testing',
-      'Statistical analysis',
-      'Competitive benchmarking',
-      'User behavior analysis'
+    'Transit Operations': [
+      'Transportation planning',
+      'Ridership demand forecasting',
+      'Intermodal routing integration',
+      'Live vehicle traffic visualization',
+      'Geospatial analysis',
+      'Community impact assessment'
     ],
-    'Tools & Platforms': [
-      'Zendesk', 'PagerDuty', 'JIRA', 'Airtable',
-      'Grafana', 'AWS (S3, Athena, IAM)',
-      'Git/GitHub', 'Jenkins CI/CD',
-      'GTFS / GTFS-RT', 'ArcGIS', 'Streamlit'
+    'Data & Tools': [
+      'Python', 'SQL (AWS Athena)',
+      'Tableau', 'Grafana',
+      'KPI monitoring', 'JIRA',
+      'Airtable', 'ArcGIS', 'Figma'
     ]
   };
 
@@ -108,10 +101,10 @@ function Resume() {
               Resume
             </h1>
             <p className="text-base text-gray-600 dark:text-gray-400 mb-1">
-              Linjing Rao &middot; Data Analyst at <span className="font-semibold text-[#FF5733] dark:text-[#FF6B47]">Citymapper</span> (Via Transportation)
+              Linjing Rao &middot; City Operations Data Analyst at <span className="font-semibold text-[#FF5733] dark:text-[#FF6B47]">Citymapper</span> (Via Transportation)
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-              Urban mobility data, GTFS pipelines, transit partnerships, applied AI/ML
+              Urban mobility data, transit operations, intermodal integrations, geospatial analysis
             </p>
             <div className="flex flex-wrap items-center gap-3 text-sm">
               <span className="text-gray-500 dark:text-gray-400">New York, NY</span>
@@ -121,6 +114,14 @@ function Resume() {
               <a href="https://github.com/lrao01-su" target="_blank" rel="noopener noreferrer" className="text-[#FF5733] dark:text-[#FF6B47] hover:underline text-sm">GitHub</a>
             </div>
           </div>
+          <a
+            href="/Linjing_Rao_Resume.pdf"
+            download
+            className="flex items-center gap-2 px-4 py-2 bg-[#FF5733] hover:bg-[#e04a2a] text-white text-sm font-semibold rounded-lg transition-colors shrink-0"
+          >
+            <FaDownload className="w-3.5 h-3.5" />
+            Download PDF
+          </a>
         </div>
 
         {/* Timeline */}
@@ -184,7 +185,7 @@ function Resume() {
         {/* Technical Skills */}
         <section className="mt-14">
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Technical Skills</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {Object.entries(skills).map(([category, skillList]) => (
               <div key={category} className="bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#30363D] p-5">
                 <div className="flex items-center gap-2 mb-3">
