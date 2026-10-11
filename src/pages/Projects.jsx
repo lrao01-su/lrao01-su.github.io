@@ -6,6 +6,21 @@ function Projects() {
 
   const projects = [
     {
+      title: "Spaceplan",
+      subtitle: "Collaborative apartment layout planner",
+      problem: "Roommates need a practical way to test furniture, compare competing layouts, and understand what will fit before purchasing or moving heavy pieces.",
+      approach: "Built an upload-first planning tool that places furniture to scale on a floor plan. Added wall and overlap checks, flexible rotation, roommate layout options, and product-link importing that reads furniture dimensions and prices for comparison.",
+      impact: [
+        "Scaled drag-and-rotate furniture planning on uploaded floor plans",
+        "Retail product import with dimensions, pricing, and option comparison",
+        "Roommate-focused layout options, comments, voting, and protected open-space guidance"
+      ],
+      technologies: ["React", "TypeScript", "Cloudflare Workers", "JSON-LD", "Product Design"],
+      relevance: ["Product Analyst", "Full-Stack"],
+      featured: true,
+      year: "2026"
+    },
+    {
       title: "NYC Subway Analysis",
       subtitle: "Where is my F train?",
       problem: "NYC riders lack accessible, real-time visibility into subway performance and ridership trends across the system.",
@@ -174,6 +189,11 @@ function Projects() {
                       <div className="flex flex-wrap items-center gap-2 mb-1">
                         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">{project.title}</h2>
                         <span className="font-mono text-sm text-gray-400 dark:text-gray-600">{project.year}</span>
+                        {project.featured && (
+                          <span className="font-mono text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-[#FF5733] dark:bg-[#FF6B47] text-white">
+                            Recent project
+                          </span>
+                        )}
                       </div>
                       <p className="text-base text-gray-500 dark:text-gray-400 italic">{project.subtitle}</p>
                     </div>
