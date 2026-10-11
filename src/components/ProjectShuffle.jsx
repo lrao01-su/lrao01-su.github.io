@@ -44,7 +44,7 @@ const PROJECTS = [
     link: "https://github.com/lrao01-su/wikichat",
     linkLabel: "GitHub",
     image: "/wikichat-preview.svg",
-    imageAlt: "WikiChat interface preview with indexed Wikipedia pages, a grounded answer, and a citation",
+    imageAlt: "WikiChat system design showing Wikipedia ingestion, vector indexing, ReAct agent orchestration, and retrieval",
     icon: "🤖"
   },
   {

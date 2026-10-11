@@ -74,7 +74,7 @@ function Projects() {
       technologies: ["Python", "OpenAI", "LlamaIndex", "Chainlit", "RAG"],
       relevance: ["Data Ops", "Analytics Eng"],
       image: "/wikichat-preview.svg",
-      imageAlt: "WikiChat interface preview with indexed Wikipedia pages, a grounded answer, and a citation",
+      imageAlt: "WikiChat system design showing Wikipedia ingestion, vector indexing, ReAct agent orchestration, and retrieval",
       github: "https://github.com/lrao01-su/wikichat",
       year: "2024"
     },

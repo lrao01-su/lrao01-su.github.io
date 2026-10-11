@@ -1,40 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-  <title id="title">WikiChat project preview</title>
-  <desc id="desc">A conversational Wikipedia research interface with indexed sources and cited answers.</desc>
-  <defs><linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f7f4"/><stop offset="1" stop-color="#e9eef6"/></linearGradient><filter id="ws"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#334155" flood-opacity=".16"/></filter></defs>
-  <rect width="1200" height="675" rx="26" fill="url(#wbg)"/>
+  <title id="title">WikiChat technical system design</title>
+  <desc id="desc">Architecture diagram showing Wikipedia ingestion, vector indexing, ReAct agent orchestration, retrieval, and Chainlit responses.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset="1" stop-color="#0d1728"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#27405d" stroke-opacity=".22" stroke-width="1"/></pattern>
+    <linearGradient id="node" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#17263a"/><stop offset="1" stop-color="#101c2d"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".28"/></filter>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#fb923c"/></marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#22d3ee"/></marker>
+    <marker id="arrowSlate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1200" height="675" rx="26" fill="url(#bg)"/>
+  <rect width="1200" height="675" rx="26" fill="url(#grid)"/>
   <g font-family="Inter,Arial,sans-serif">
-    <rect x="38" y="34" width="1124" height="607" rx="22" fill="#fff" stroke="#d7dde7" filter="url(#ws)"/>
-    <rect x="38" y="34" width="1124" height="70" rx="22" fill="#111827"/><rect x="38" y="82" width="1124" height="22" fill="#111827"/>
-    <circle cx="75" cy="69" r="17" fill="#f8fafc"/><text x="68" y="76" fill="#111827" font-family="Georgia,serif" font-size="23" font-weight="700">W</text>
-    <text x="103" y="75" fill="#f8fafc" font-size="23" font-weight="750">WikiChat</text><text x="214" y="74" fill="#94a3b8" font-size="14">Answers grounded in Wikipedia</text>
-    <rect x="1004" y="52" width="124" height="34" rx="17" fill="#1f2937"/><circle cx="1025" cy="69" r="5" fill="#34d399"/><text x="1038" y="74" fill="#cbd5e1" font-size="13">INDEX READY</text>
+    <text x="52" y="55" fill="#f8fafc" font-size="27" font-weight="750">WikiChat · System Design</text>
+    <text x="52" y="82" fill="#7f95ad" font-size="14">Dynamic Wikipedia indexing + agentic retrieval with LlamaIndex</text>
+    <g transform="translate(870,42)"><rect width="278" height="42" rx="10" fill="#111e30" stroke="#29415d"/><circle cx="20" cy="21" r="5" fill="#34d399"/><text x="35" y="26" fill="#a7f3d0" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13">CHAINLIT / OPENAI / RAG</text></g>
 
-    <rect x="38" y="104" width="252" height="537" fill="#f8fafc"/>
-    <text x="66" y="145" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.4">INDEXED PAGES</text>
-    <g><rect x="60" y="166" width="208" height="72" rx="12" fill="#fff" stroke="#dbe2ec"/><text x="78" y="192" fill="#111827" font-size="14" font-weight="700">New York City Subway</text><text x="78" y="217" fill="#64748b" font-size="12">126 chunks · ready</text><circle cx="247" cy="185" r="5" fill="#22c55e"/></g>
-    <g><rect x="60" y="250" width="208" height="72" rx="12" fill="#fff" stroke="#dbe2ec"/><text x="78" y="276" fill="#111827" font-size="14" font-weight="700">Public transportation</text><text x="78" y="301" fill="#64748b" font-size="12">84 chunks · ready</text><circle cx="247" cy="269" r="5" fill="#22c55e"/></g>
-    <rect x="60" y="340" width="208" height="42" rx="10" fill="#eef2ff" stroke="#c7d2fe"/><text x="104" y="366" fill="#4f46e5" font-size="13" font-weight="700">+ Index another page</text>
-    <text x="66" y="428" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.4">PIPELINE</text>
-    <g fill="#475569" font-size="13"><circle cx="74" cy="458" r="5" fill="#6366f1"/><text x="91" y="463">Retrieve passages</text><circle cx="74" cy="493" r="5" fill="#6366f1"/><text x="91" y="498">Rank relevance</text><circle cx="74" cy="528" r="5" fill="#6366f1"/><text x="91" y="533">Generate with citations</text></g>
+    <text x="52" y="124" fill="#fb923c" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="700" letter-spacing="1.4">01 · KNOWLEDGE INGESTION</text>
+    <path d="M208 190H251" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+    <path d="M421 190H465" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+    <path d="M635 190H679" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+    <path d="M849 190H893" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
 
-    <line x1="290" y1="104" x2="290" y2="641" stroke="#dbe2ec"/>
-    <text x="324" y="145" fill="#111827" font-size="19" font-weight="750">Ask Wikipedia</text>
-    <text x="324" y="177" fill="#64748b" font-size="13">Conversation uses only the pages in this workspace.</text>
-    <rect x="412" y="212" width="454" height="68" rx="16" fill="#eef2ff"/><text x="438" y="241" fill="#312e81" font-size="14">How does real-time subway information</text><text x="438" y="262" fill="#312e81" font-size="14">reach riders?</text>
-    <rect x="324" y="306" width="586" height="174" rx="16" fill="#f8fafc" stroke="#dbe2ec"/>
-    <circle cx="352" cy="337" r="15" fill="#111827"/><text x="346" y="343" fill="#fff" font-family="Georgia,serif" font-size="16" font-weight="700">W</text>
-    <text x="380" y="342" fill="#111827" font-size="14" font-weight="700">WikiChat</text>
-    <text x="350" y="378" fill="#334155" font-size="14">Transit agencies publish vehicle positions and arrival</text><text x="350" y="402" fill="#334155" font-size="14">updates through GTFS-Realtime feeds. Applications parse</text><text x="350" y="426" fill="#334155" font-size="14">those messages and match them to static schedules.</text>
-    <rect x="350" y="447" width="110" height="25" rx="12" fill="#e0e7ff"/><text x="367" y="464" fill="#4338ca" font-size="12" font-weight="700">[1] Wikipedia</text>
-    <rect x="324" y="525" width="586" height="58" rx="15" fill="#fff" stroke="#cbd5e1"/><text x="348" y="560" fill="#94a3b8" font-size="14">Ask a follow-up question…</text><circle cx="878" cy="554" r="17" fill="#4f46e5"/><path d="M870 554h15m-6-6 6 6-6 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <text x="324" y="612" fill="#94a3b8" font-size="12">RAG · LlamaIndex · OpenAI · Chainlit</text>
+    <g transform="translate(52,145)" filter="url(#shadow)"><rect width="156" height="91" rx="13" fill="url(#node)" stroke="#fb923c" stroke-opacity=".8"/><text x="18" y="27" fill="#fdba74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">CHAINLIT SETTINGS</text><text x="18" y="54" fill="#f8fafc" font-size="15" font-weight="700">Page request</text><text x="18" y="75" fill="#8fa4bb" font-size="12">+ model selector</text></g>
+    <g transform="translate(251,145)" filter="url(#shadow)"><rect width="170" height="91" rx="13" fill="url(#node)" stroke="#fb923c" stroke-opacity=".8"/><text x="17" y="27" fill="#fdba74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5">OpenAIPydanticProgram</text><text x="17" y="54" fill="#f8fafc" font-size="15" font-weight="700">Extract page list</text><text x="17" y="75" fill="#8fa4bb" font-size="12">WikiPageList model</text></g>
+    <g transform="translate(465,145)" filter="url(#shadow)"><rect width="170" height="91" rx="13" fill="url(#node)" stroke="#fb923c" stroke-opacity=".8"/><text x="17" y="27" fill="#fdba74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">WikipediaReader</text><text x="17" y="54" fill="#f8fafc" font-size="15" font-weight="700">Load documents</text><text x="17" y="75" fill="#8fa4bb" font-size="12">requested pages</text></g>
+    <g transform="translate(679,145)" filter="url(#shadow)"><rect width="170" height="91" rx="13" fill="url(#node)" stroke="#fb923c" stroke-opacity=".8"/><text x="17" y="27" fill="#fdba74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">SentenceSplitter</text><text x="17" y="54" fill="#f8fafc" font-size="15" font-weight="700">Chunk content</text><text x="17" y="75" fill="#8fa4bb" font-size="12">150 tokens · 45 overlap</text></g>
+    <g transform="translate(893,145)" filter="url(#shadow)"><rect width="255" height="91" rx="13" fill="#122a33" stroke="#2dd4bf"/><text x="18" y="27" fill="#5eead4" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">VectorStoreIndex</text><text x="18" y="54" fill="#f8fafc" font-size="15" font-weight="700">In-memory knowledge index</text><text x="18" y="75" fill="#8fa4bb" font-size="12">rebuilt on settings update</text></g>
 
-    <rect x="936" y="130" width="200" height="477" rx="14" fill="#f8fafc" stroke="#dbe2ec"/>
-    <text x="956" y="165" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">RETRIEVED SOURCE</text>
-    <rect x="956" y="188" width="160" height="176" rx="10" fill="#fff" stroke="#dbe2ec"/>
-    <rect x="974" y="207" width="88" height="9" rx="4" fill="#111827"/><rect x="974" y="229" width="122" height="6" rx="3" fill="#cbd5e1"/><rect x="974" y="244" width="108" height="6" rx="3" fill="#cbd5e1"/><rect x="974" y="259" width="126" height="6" rx="3" fill="#cbd5e1"/><rect x="970" y="279" width="132" height="45" rx="6" fill="#eef2ff"/><rect x="974" y="340" width="84" height="6" rx="3" fill="#cbd5e1"/>
-    <text x="956" y="397" fill="#111827" font-size="13" font-weight="700">Relevance</text><rect x="956" y="410" width="160" height="8" rx="4" fill="#e2e8f0"/><rect x="956" y="410" width="139" height="8" rx="4" fill="#6366f1"/>
-    <text x="956" y="457" fill="#111827" font-size="13" font-weight="700">Citation match</text><text x="1079" y="457" fill="#16a34a" font-size="13" font-weight="700">92%</text>
+    <path d="M1020 236V305" stroke="#64748b" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrowSlate)"/>
+    <text x="1033" y="275" fill="#6f879f" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10">global index</text>
+
+    <text x="52" y="301" fill="#22d3ee" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" font-weight="700" letter-spacing="1.4">02 · QUESTION ANSWERING</text>
+    <path d="M196 377H243" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+    <path d="M425 377H471" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+    <path d="M661 377H707" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+    <path d="M899 377H937" stroke="#22d3ee" stroke-width="2.5" marker-end="url(#arrowCyan)"/>
+
+    <g transform="translate(52,326)" filter="url(#shadow)"><rect width="144" height="102" rx="13" fill="url(#node)" stroke="#22d3ee" stroke-opacity=".8"/><text x="17" y="28" fill="#67e8f9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">@cl.on_message</text><text x="17" y="58" fill="#f8fafc" font-size="15" font-weight="700">User prompt</text><text x="17" y="80" fill="#8fa4bb" font-size="12">Chainlit UI</text></g>
+    <g transform="translate(243,326)" filter="url(#shadow)"><rect width="182" height="102" rx="13" fill="url(#node)" stroke="#22d3ee" stroke-opacity=".8"/><text x="17" y="28" fill="#67e8f9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">ReActAgent</text><text x="17" y="56" fill="#f8fafc" font-size="15" font-weight="700">Plan + call tool</text><text x="17" y="78" fill="#8fa4bb" font-size="12">GPT-3.5 or GPT-4</text></g>
+    <g transform="translate(471,326)" filter="url(#shadow)"><rect width="190" height="102" rx="13" fill="url(#node)" stroke="#22d3ee" stroke-opacity=".8"/><text x="17" y="28" fill="#67e8f9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">QueryEngineTool</text><text x="17" y="56" fill="#f8fafc" font-size="15" font-weight="700">WikipediaSearch</text><text x="17" y="78" fill="#8fa4bb" font-size="12">tool metadata + routing</text></g>
+    <g transform="translate(707,326)" filter="url(#shadow)"><rect width="192" height="102" rx="13" fill="url(#node)" stroke="#22d3ee" stroke-opacity=".8"/><text x="17" y="28" fill="#67e8f9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">QueryEngine</text><text x="17" y="56" fill="#f8fafc" font-size="15" font-weight="700">Retrieve + synthesize</text><text x="17" y="78" fill="#8fa4bb" font-size="12">compact · top_k = 10</text></g>
+    <g transform="translate(937,326)" filter="url(#shadow)"><rect width="211" height="102" rx="13" fill="#102a36" stroke="#22d3ee"/><text x="17" y="28" fill="#67e8f9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">@cl.Message</text><text x="17" y="56" fill="#f8fafc" font-size="15" font-weight="700">Grounded response</text><text x="17" y="78" fill="#8fa4bb" font-size="12">returned to chat</text></g>
+
+    <path d="M1020 305C982 280 889 281 835 324" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#arrowSlate)"/>
+    <path d="M1020 305C1072 287 1100 300 1100 324" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-dasharray="5 5"/>
+
+    <rect x="52" y="470" width="1096" height="80" rx="13" fill="#0c1726" stroke="#263d58"/>
+    <text x="74" y="497" fill="#7f95ad" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11" letter-spacing="1.2">RUNTIME + OBSERVABILITY</text>
+    <g transform="translate(74,512)"><rect width="214" height="25" rx="6" fill="#18283b"/><text x="13" y="17" fill="#c6d3e1" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">CallbackManager</text><text x="128" y="17" fill="#64748b" font-size="11">→</text><text x="148" y="17" fill="#93c5fd" font-size="11">Debug</text></g>
+    <g transform="translate(310,512)"><rect width="235" height="25" rx="6" fill="#18283b"/><text x="13" y="17" fill="#c6d3e1" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">utils.get_apikey()</text><text x="150" y="17" fill="#64748b" font-size="11">→</text><text x="170" y="17" fill="#93c5fd" font-size="11">OpenAI</text></g>
+    <g transform="translate(567,512)"><rect width="249" height="25" rx="6" fill="#18283b"/><text x="13" y="17" fill="#c6d3e1" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">global state</text><text x="93" y="17" fill="#64748b" font-size="11">→</text><text x="113" y="17" fill="#93c5fd" font-size="11">index + agent</text></g>
+    <g transform="translate(838,512)"><rect width="288" height="25" rx="6" fill="#18283b"/><text x="13" y="17" fill="#c6d3e1" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">async bridge</text><text x="91" y="17" fill="#64748b" font-size="11">→</text><text x="111" y="17" fill="#93c5fd" font-size="11">cl.make_async(agent.chat)</text></g>
+
+    <g transform="translate(52,588)"><circle cx="6" cy="6" r="5" fill="#fb923c"/><text x="19" y="11" fill="#94a3b8" font-size="12">indexing path</text><circle cx="130" cy="6" r="5" fill="#22d3ee"/><text x="143" y="11" fill="#94a3b8" font-size="12">query path</text><text x="950" y="11" fill="#57708a" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11">chat_agent.py · index_wikipages.py · utils.py</text></g>
   </g>
 </svg>
