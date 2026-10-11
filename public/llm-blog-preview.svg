@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">LLM Blog Platform project preview</title>
+  <desc id="desc">An AI blog generator interface with topic entry, search, and editable posts.</desc>
+  <defs><linearGradient id="bbg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8eef7"/><stop offset="1" stop-color="#f7f9fc"/></linearGradient><filter id="bs"><feDropShadow dx="0" dy="14" stdDeviation="20" flood-color="#1e3a5f" flood-opacity=".16"/></filter></defs>
+  <rect width="1200" height="675" rx="26" fill="url(#bbg)"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="95" y="38" width="1010" height="599" rx="6" fill="#fff" filter="url(#bs)"/>
+    <rect x="95" y="38" width="1010" height="72" rx="6" fill="#fff"/><text x="135" y="84" fill="#333" font-size="30" font-weight="700">AI Blog Generator</text>
+    <rect x="858" y="57" width="205" height="34" rx="17" fill="#eef4ff"/><text x="886" y="79" fill="#2563eb" font-size="13" font-weight="700">48-HOUR FULL-STACK BUILD</text>
+    <line x1="95" y1="110" x2="1105" y2="110" stroke="#e5e7eb"/>
+    <text x="135" y="154" fill="#333" font-size="21" font-weight="700">Generate a Blog Post</text><text x="135" y="186" fill="#4b5563" font-size="14">Topic</text>
+    <rect x="135" y="199" width="717" height="48" rx="5" fill="#fff" stroke="#cfd6df"/><text x="154" y="229" fill="#8a94a3" font-size="14">Enter a topic for the blog post</text>
+    <rect x="872" y="199" width="151" height="48" rx="5" fill="#007bff"/><path d="M897 223h15m-7-7 7 7-7 7" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/><text x="923" y="229" fill="#fff" font-size="14" font-weight="700">Generate Post</text>
+    <rect x="135" y="277" width="888" height="44" rx="5" fill="#fafafa" stroke="#d7dce3"/><circle cx="159" cy="299" r="7" fill="none" stroke="#8a94a3" stroke-width="2"/><line x1="164" y1="304" x2="170" y2="310" stroke="#8a94a3" stroke-width="2"/><text x="183" y="305" fill="#8a94a3" font-size="14">Search generated posts…</text>
+    <text x="135" y="365" fill="#333" font-size="21" font-weight="700">Recent Posts</text><text x="961" y="365" fill="#6b7280" font-size="13">3 posts</text>
+    <rect x="135" y="386" width="430" height="188" rx="8" fill="#f9f9f9" stroke="#ddd"/>
+    <rect x="590" y="386" width="433" height="188" rx="8" fill="#f9f9f9" stroke="#ddd"/>
+    <text x="160" y="420" fill="#333" font-size="18" font-weight="700">Designing Better City Data Tools</text><text x="160" y="451" fill="#5f6875" font-size="13">Clear public tools begin with the decisions</text><text x="160" y="473" fill="#5f6875" font-size="13">people need to make, not the data available.</text><text x="160" y="505" fill="#8a94a3" font-size="12">Generated with OpenAI · Draft</text>
+    <rect x="160" y="528" width="68" height="29" rx="4" fill="#007bff"/><text x="181" y="548" fill="#fff" font-size="12" font-weight="700">Edit</text><rect x="239" y="528" width="76" height="29" rx="4" fill="#dc3545"/><text x="255" y="548" fill="#fff" font-size="12" font-weight="700">Delete</text>
+    <text x="615" y="420" fill="#333" font-size="18" font-weight="700">How RAG Improves Search</text><text x="615" y="451" fill="#5f6875" font-size="13">Retrieval adds grounded context before an</text><text x="615" y="473" fill="#5f6875" font-size="13">LLM writes a response.</text><text x="615" y="505" fill="#8a94a3" font-size="12">Generated with OpenAI · Published</text>
+    <rect x="615" y="528" width="68" height="29" rx="4" fill="#007bff"/><text x="636" y="548" fill="#fff" font-size="12" font-weight="700">Edit</text><rect x="694" y="528" width="76" height="29" rx="4" fill="#dc3545"/><text x="710" y="548" fill="#fff" font-size="12" font-weight="700">Delete</text>
+    <text x="135" y="610" fill="#8a94a3" font-size="13">React · Node.js · TypeScript · MongoDB · OpenAI API</text>
+  </g>
+</svg>

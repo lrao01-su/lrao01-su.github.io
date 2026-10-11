@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">WikiChat project preview</title>
+  <desc id="desc">A conversational Wikipedia research interface with indexed sources and cited answers.</desc>
+  <defs><linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f7f4"/><stop offset="1" stop-color="#e9eef6"/></linearGradient><filter id="ws"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#334155" flood-opacity=".16"/></filter></defs>
+  <rect width="1200" height="675" rx="26" fill="url(#wbg)"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="38" y="34" width="1124" height="607" rx="22" fill="#fff" stroke="#d7dde7" filter="url(#ws)"/>
+    <rect x="38" y="34" width="1124" height="70" rx="22" fill="#111827"/><rect x="38" y="82" width="1124" height="22" fill="#111827"/>
+    <circle cx="75" cy="69" r="17" fill="#f8fafc"/><text x="68" y="76" fill="#111827" font-family="Georgia,serif" font-size="23" font-weight="700">W</text>
+    <text x="103" y="75" fill="#f8fafc" font-size="23" font-weight="750">WikiChat</text><text x="214" y="74" fill="#94a3b8" font-size="14">Answers grounded in Wikipedia</text>
+    <rect x="1004" y="52" width="124" height="34" rx="17" fill="#1f2937"/><circle cx="1025" cy="69" r="5" fill="#34d399"/><text x="1038" y="74" fill="#cbd5e1" font-size="13">INDEX READY</text>
+
+    <rect x="38" y="104" width="252" height="537" fill="#f8fafc"/>
+    <text x="66" y="145" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.4">INDEXED PAGES</text>
+    <g><rect x="60" y="166" width="208" height="72" rx="12" fill="#fff" stroke="#dbe2ec"/><text x="78" y="192" fill="#111827" font-size="14" font-weight="700">New York City Subway</text><text x="78" y="217" fill="#64748b" font-size="12">126 chunks · ready</text><circle cx="247" cy="185" r="5" fill="#22c55e"/></g>
+    <g><rect x="60" y="250" width="208" height="72" rx="12" fill="#fff" stroke="#dbe2ec"/><text x="78" y="276" fill="#111827" font-size="14" font-weight="700">Public transportation</text><text x="78" y="301" fill="#64748b" font-size="12">84 chunks · ready</text><circle cx="247" cy="269" r="5" fill="#22c55e"/></g>
+    <rect x="60" y="340" width="208" height="42" rx="10" fill="#eef2ff" stroke="#c7d2fe"/><text x="104" y="366" fill="#4f46e5" font-size="13" font-weight="700">+ Index another page</text>
+    <text x="66" y="428" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.4">PIPELINE</text>
+    <g fill="#475569" font-size="13"><circle cx="74" cy="458" r="5" fill="#6366f1"/><text x="91" y="463">Retrieve passages</text><circle cx="74" cy="493" r="5" fill="#6366f1"/><text x="91" y="498">Rank relevance</text><circle cx="74" cy="528" r="5" fill="#6366f1"/><text x="91" y="533">Generate with citations</text></g>
+
+    <line x1="290" y1="104" x2="290" y2="641" stroke="#dbe2ec"/>
+    <text x="324" y="145" fill="#111827" font-size="19" font-weight="750">Ask Wikipedia</text>
+    <text x="324" y="177" fill="#64748b" font-size="13">Conversation uses only the pages in this workspace.</text>
+    <rect x="412" y="212" width="454" height="68" rx="16" fill="#eef2ff"/><text x="438" y="241" fill="#312e81" font-size="14">How does real-time subway information</text><text x="438" y="262" fill="#312e81" font-size="14">reach riders?</text>
+    <rect x="324" y="306" width="586" height="174" rx="16" fill="#f8fafc" stroke="#dbe2ec"/>
+    <circle cx="352" cy="337" r="15" fill="#111827"/><text x="346" y="343" fill="#fff" font-family="Georgia,serif" font-size="16" font-weight="700">W</text>
+    <text x="380" y="342" fill="#111827" font-size="14" font-weight="700">WikiChat</text>
+    <text x="350" y="378" fill="#334155" font-size="14">Transit agencies publish vehicle positions and arrival</text><text x="350" y="402" fill="#334155" font-size="14">updates through GTFS-Realtime feeds. Applications parse</text><text x="350" y="426" fill="#334155" font-size="14">those messages and match them to static schedules.</text>
+    <rect x="350" y="447" width="110" height="25" rx="12" fill="#e0e7ff"/><text x="367" y="464" fill="#4338ca" font-size="12" font-weight="700">[1] Wikipedia</text>
+    <rect x="324" y="525" width="586" height="58" rx="15" fill="#fff" stroke="#cbd5e1"/><text x="348" y="560" fill="#94a3b8" font-size="14">Ask a follow-up question…</text><circle cx="878" cy="554" r="17" fill="#4f46e5"/><path d="M870 554h15m-6-6 6 6-6 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="324" y="612" fill="#94a3b8" font-size="12">RAG · LlamaIndex · OpenAI · Chainlit</text>
+
+    <rect x="936" y="130" width="200" height="477" rx="14" fill="#f8fafc" stroke="#dbe2ec"/>
+    <text x="956" y="165" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">RETRIEVED SOURCE</text>
+    <rect x="956" y="188" width="160" height="176" rx="10" fill="#fff" stroke="#dbe2ec"/>
+    <rect x="974" y="207" width="88" height="9" rx="4" fill="#111827"/><rect x="974" y="229" width="122" height="6" rx="3" fill="#cbd5e1"/><rect x="974" y="244" width="108" height="6" rx="3" fill="#cbd5e1"/><rect x="974" y="259" width="126" height="6" rx="3" fill="#cbd5e1"/><rect x="970" y="279" width="132" height="45" rx="6" fill="#eef2ff"/><rect x="974" y="340" width="84" height="6" rx="3" fill="#cbd5e1"/>
+    <text x="956" y="397" fill="#111827" font-size="13" font-weight="700">Relevance</text><rect x="956" y="410" width="160" height="8" rx="4" fill="#e2e8f0"/><rect x="956" y="410" width="139" height="8" rx="4" fill="#6366f1"/>
+    <text x="956" y="457" fill="#111827" font-size="13" font-weight="700">Citation match</text><text x="1079" y="457" fill="#16a34a" font-size="13" font-weight="700">92%</text>
+  </g>
+</svg>

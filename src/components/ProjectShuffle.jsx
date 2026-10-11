@@ -21,6 +21,8 @@ const PROJECTS = [
     technologies: ["Python", "Streamlit", "GTFS / GTFS-RT"],
     link: "https://github.com/lrao01-su",
     linkLabel: "GitHub",
+    image: "/nyc-subway-preview.svg",
+    imageAlt: "Transit data dashboard preview with subway routes, live arrivals, and ridership trends",
     icon: "🚇"
   },
   {
@@ -30,6 +32,8 @@ const PROJECTS = [
     technologies: ["ArcGIS", "Python", "NYC OpenData"],
     link: "https://storymaps.arcgis.com/stories/31454ec7b346406da8a48c84bed3e496",
     linkLabel: "View Story Map",
+    image: "/flow-water.jpg",
+    imageAlt: "Opening screen of the Flow of the Water ArcGIS StoryMap",
     icon: "💧"
   },
   {
@@ -39,6 +43,8 @@ const PROJECTS = [
     technologies: ["Python", "OpenAI", "LlamaIndex"],
     link: "https://github.com/lrao01-su/wikichat",
     linkLabel: "GitHub",
+    image: "/wikichat-preview.svg",
+    imageAlt: "WikiChat interface preview with indexed Wikipedia pages, a grounded answer, and a citation",
     icon: "🤖"
   },
   {
@@ -48,6 +54,8 @@ const PROJECTS = [
     technologies: ["Next.js", "React", "Google Maps API"],
     link: "https://milestone-3-lr534.vercel.app/",
     linkLabel: "Live Demo",
+    image: "/solar-plan.jpg",
+    imageAlt: "Solar Plan web application landing page",
     icon: "☀️"
   },
   {
@@ -57,6 +65,8 @@ const PROJECTS = [
     technologies: ["React", "Node.js", "MongoDB", "OpenAI API"],
     link: "https://github.com/lrao01-su/llm-blog-platform",
     linkLabel: "GitHub",
+    image: "/llm-blog-preview.svg",
+    imageAlt: "AI Blog Generator interface preview with topic generation, search, and editable posts",
     icon: "✍️"
   }
 ];
@@ -106,9 +116,21 @@ function ProjectShuffle() {
 
         <div className="p-5 sm:p-6">
           {project.image && (
-            <div className="mb-5 overflow-hidden rounded-lg border border-gray-200 dark:border-[#30363D] bg-[#F6F8FA] dark:bg-[#0D1117]">
-              <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/9] object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
-            </div>
+            project.caseStudy ? (
+              <div className="mb-5 overflow-hidden rounded-lg border border-gray-200 dark:border-[#30363D] bg-[#F6F8FA] dark:bg-[#0D1117]">
+                <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/9] object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
+              </div>
+            ) : (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-20 block mb-5 overflow-hidden rounded-lg border border-gray-200 dark:border-[#30363D] bg-[#F6F8FA] dark:bg-[#0D1117]"
+                aria-label={`Open ${project.title}`}
+              >
+                <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/9] object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
+              </a>
+            )
           )}
 
           {/* Icon + title row */}

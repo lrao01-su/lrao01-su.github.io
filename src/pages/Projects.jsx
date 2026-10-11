@@ -38,6 +38,8 @@ function Projects() {
       ],
       technologies: ["Python", "Streamlit", "GTFS / GTFS-RT", "Data Pipelines"],
       relevance: ["Data Ops", "Analytics Eng"],
+      image: "/nyc-subway-preview.svg",
+      imageAlt: "Transit data dashboard preview with subway routes, live arrivals, and ridership trends",
       github: "https://github.com/lrao01-su",
       year: "2024"
     },
@@ -53,6 +55,8 @@ function Projects() {
       ],
       technologies: ["ArcGIS", "Python", "NYC OpenData", "Spatial Analysis"],
       relevance: ["Analytics Eng", "Data Ops"],
+      image: "/flow-water.jpg",
+      imageAlt: "Opening screen of the Flow of the Water ArcGIS StoryMap",
       link: "https://storymaps.arcgis.com/stories/31454ec7b346406da8a48c84bed3e496",
       linkLabel: "View Story Map",
       year: "2022"
@@ -69,6 +73,8 @@ function Projects() {
       ],
       technologies: ["Python", "OpenAI", "LlamaIndex", "Chainlit", "RAG"],
       relevance: ["Data Ops", "Analytics Eng"],
+      image: "/wikichat-preview.svg",
+      imageAlt: "WikiChat interface preview with indexed Wikipedia pages, a grounded answer, and a citation",
       github: "https://github.com/lrao01-su/wikichat",
       year: "2024"
     },
@@ -84,6 +90,8 @@ function Projects() {
       ],
       technologies: ["Next.js", "React", "Google Maps API", "Solar API"],
       relevance: ["Product Analyst", "Full-Stack"],
+      image: "/solar-plan.jpg",
+      imageAlt: "Solar Plan web application landing page",
       link: "https://milestone-3-lr534.vercel.app/",
       linkLabel: "Live Demo",
       year: "2024"
@@ -100,6 +108,8 @@ function Projects() {
       ],
       technologies: ["React", "Node.js", "TypeScript", "MongoDB", "OpenAI API"],
       relevance: ["Full-Stack"],
+      image: "/llm-blog-preview.svg",
+      imageAlt: "AI Blog Generator interface preview with topic generation, search, and editable posts",
       github: "https://github.com/lrao01-su/llm-blog-platform",
       year: "2024"
     }
@@ -190,7 +200,13 @@ function Projects() {
             filteredProjects.map((project, index) => (
               <article key={index} className="bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#30363D] hover:border-[#FF5733] dark:hover:border-[#FF6B47] hover:shadow-lg transition-all overflow-hidden">
                 {project.image && (
-                  <a href={project.caseStudy} className="block overflow-hidden border-b border-gray-200 dark:border-[#30363D]" aria-label={`Read the ${project.title} case study`}>
+                  <a
+                    href={project.caseStudy || project.link || project.github}
+                    target={project.caseStudy ? undefined : "_blank"}
+                    rel={project.caseStudy ? undefined : "noopener noreferrer"}
+                    className="block overflow-hidden border-b border-gray-200 dark:border-[#30363D]"
+                    aria-label={`Open ${project.title}`}
+                  >
                     <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/7] object-cover object-top transition-transform duration-300 hover:scale-[1.01]" />
                   </a>
                 )}
