@@ -9,13 +9,14 @@ function Projects() {
       title: "Spaceplan",
       subtitle: "Collaborative apartment layout planner",
       problem: "Roommates need a practical way to test furniture, compare competing layouts, and understand what will fit before purchasing or moving heavy pieces.",
-      approach: "Built an upload-first planning tool that places furniture to scale on a floor plan. Added wall and overlap checks, flexible rotation, roommate layout options, and product-link importing that reads furniture dimensions and prices for comparison.",
+      approach: "Built an upload-first planning tool that places furniture to scale on a floor plan. Added wall and overlap checks, flexible rotation, roommate layout options, product-link importing, and durable shared drafts with stored floor-plan uploads.",
       impact: [
         "Scaled drag-and-rotate furniture planning on uploaded floor plans",
         "Retail product import with dimensions, pricing, and option comparison",
-        "Roommate-focused layout options, comments, voting, and protected open-space guidance"
+        "Roommate-focused layout options, comments, voting, and protected open-space guidance",
+        "Persistent plan data and floor-plan uploads backed by Cloudflare D1 and R2"
       ],
-      technologies: ["React", "TypeScript", "Cloudflare Workers", "JSON-LD", "Product Design"],
+      technologies: ["React", "TypeScript", "Cloudflare Workers", "D1 / R2", "JSON-LD", "Product Design"],
       relevance: ["Product Analyst", "Full-Stack"],
       featured: true,
       year: "2026"
