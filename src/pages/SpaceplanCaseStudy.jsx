@@ -53,12 +53,33 @@ function SpaceplanCaseStudy() {
 
         <section className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14 py-10 border-y border-gray-200 dark:border-[#30363D]">
           <div>
-            <p className="font-mono text-xs font-semibold text-[#FF5733] dark:text-[#FF6B47] uppercase tracking-widest mb-2">The idea</p>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Make the decision visible.</h2>
+            <p className="font-mono text-xs font-semibold text-[#FF5733] dark:text-[#FF6B47] uppercase tracking-widest mb-2">The user pain</p>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Furniture decisions are expensive to get wrong.</h2>
           </div>
-          <div className="space-y-4 text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            <p>Room planning is not only a geometry problem. Roommates also need to compare priorities, discuss tradeoffs, and agree before spending money or moving heavy pieces.</p>
-            <p>Spaceplan combines a scaled floor-plan canvas with product research and lightweight collaboration in one decision flow.</p>
+          <div className="space-y-5 text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p>More young adults share apartments with roommates or partners, so one furniture purchase can affect circulation, storage, work, and how everyone uses the home.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                {
+                  title: 'Shared decision',
+                  text: 'One purchase changes how everyone moves, works, and stores things.',
+                },
+                {
+                  title: 'Hard to visualize',
+                  text: 'Product dimensions do not show how an item works inside this room.',
+                },
+                {
+                  title: 'Costly to reverse',
+                  text: 'Delivery, assembly, disassembly, and returns make a bad fit expensive.',
+                },
+              ].map((point) => (
+                <div key={point.title} className="rounded-xl border border-gray-200 dark:border-[#30363D] bg-white dark:bg-[#161B22] p-4">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-2">{point.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">{point.text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="font-medium text-gray-900 dark:text-gray-100">Spaceplan reduces that mental load by letting people test furniture at scale, compare options, and agree before buying.</p>
           </div>
         </section>
 
