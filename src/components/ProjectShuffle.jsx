@@ -43,7 +43,7 @@ const PROJECTS = [
     technologies: ["Python", "OpenAI", "LlamaIndex"],
     link: "https://github.com/lrao01-su/wikichat",
     linkLabel: "GitHub",
-    image: "/wikichat-preview.svg",
+    image: "/wikichat-system-design.svg",
     imageAlt: "WikiChat system design showing Wikipedia ingestion, vector indexing, ReAct agent orchestration, and retrieval",
     icon: "🤖"
   },
