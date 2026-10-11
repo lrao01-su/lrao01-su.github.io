@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaFilter, FaTimes } from 'react-icons/fa/index';
+import { FaArrowRight, FaGithub, FaExternalLinkAlt, FaFilter, FaTimes } from 'react-icons/fa/index';
 
 function Projects() {
   const [activeFilters, setActiveFilters] = useState([]);
@@ -18,6 +18,11 @@ function Projects() {
       ],
       technologies: ["React", "TypeScript", "Cloudflare Workers", "D1 / R2", "JSON-LD", "Product Design"],
       relevance: ["Product Analyst", "Full-Stack"],
+      caseStudy: "#/projects/spaceplan",
+      image: "/spaceplan-overview.jpg",
+      imageAlt: "Spaceplan interface with a scaled floor plan, furniture inventory, and roommate decision tools",
+      link: "https://residence-09-spaceplan.mary2jing.chatgpt.site/",
+      linkLabel: "Live project",
       featured: true,
       year: "2026"
     },
@@ -184,11 +189,16 @@ function Projects() {
           ) : (
             filteredProjects.map((project, index) => (
               <article key={index} className="bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#30363D] hover:border-[#FF5733] dark:hover:border-[#FF6B47] hover:shadow-lg transition-all overflow-hidden">
+                {project.image && (
+                  <a href={project.caseStudy} className="block overflow-hidden border-b border-gray-200 dark:border-[#30363D]" aria-label={`Read the ${project.title} case study`}>
+                    <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/7] object-cover object-top transition-transform duration-300 hover:scale-[1.01]" />
+                  </a>
+                )}
                 <div className="p-6 lg:p-7">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">{project.title}</h2>
+                        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">{project.caseStudy ? <a href={project.caseStudy} className="hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">{project.title}</a> : project.title}</h2>
                         <span className="font-mono text-sm text-gray-400 dark:text-gray-600">{project.year}</span>
                         {project.featured && (
                           <span className="font-mono text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-[#FF5733] dark:bg-[#FF6B47] text-white">
@@ -249,6 +259,12 @@ function Projects() {
                       })}
                     </div>
                     <div className="flex gap-3 sm:shrink-0">
+                      {project.caseStudy && (
+                        <a href={project.caseStudy}
+                          className="inline-flex items-center gap-1.5 text-base font-medium text-[#FF5733] dark:text-[#FF6B47] hover:underline">
+                          Case study <FaArrowRight className="w-3.5 h-3.5" />
+                        </a>
+                      )}
                       {project.github && (
                         <a href={project.github} target="_blank" rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-base font-medium text-gray-600 dark:text-gray-400 hover:text-[#FF5733] dark:hover:text-[#FF6B47] transition-colors">

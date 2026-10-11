@@ -6,6 +6,7 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import SpaceplanCaseStudy from './pages/SpaceplanCaseStudy';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/projects/spaceplan" element={<SpaceplanCaseStudy />} />
           </Routes>
         </main>
         <Footer />

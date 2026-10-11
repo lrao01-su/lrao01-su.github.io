@@ -1,7 +1,19 @@
 import { useState, useCallback } from 'react';
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa/index';
+import { FaArrowRight, FaExternalLinkAlt, FaGithub } from 'react-icons/fa/index';
 
 const PROJECTS = [
+  {
+    title: "Spaceplan",
+    subtitle: "Plan a shared home before moving anything",
+    description: "Upload a floor plan, test furniture to scale, and compare layout decisions with a roommate.",
+    technologies: ["React", "TypeScript", "D1 / R2"],
+    link: "#/projects/spaceplan",
+    linkLabel: "View case study",
+    caseStudy: true,
+    image: "/spaceplan-overview.jpg",
+    imageAlt: "Spaceplan interface showing a floor plan, furniture options, and roommate comments",
+    icon: "⌂"
+  },
   {
     title: "NYC Subway Analysis",
     subtitle: "Where is my F train?",
@@ -82,12 +94,23 @@ function ProjectShuffle() {
 
   return (
     <div className="w-full">
-      {/* Card */}
-      <div className={`bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#30363D] overflow-hidden transition-all duration-200 ${isShuffling ? 'scale-[0.98] opacity-80' : 'scale-100 opacity-100'}`}>
+      <div className={`relative group bg-white dark:bg-[#161B22] rounded-xl border border-gray-200 dark:border-[#30363D] overflow-hidden transition-all duration-200 ${project.caseStudy ? 'hover:border-[#FF5733] dark:hover:border-[#FF6B47] hover:shadow-lg cursor-pointer' : ''} ${isShuffling ? 'scale-[0.98] opacity-80' : 'scale-100 opacity-100'}`}>
+        {project.caseStudy && (
+          <a href={project.link} className="absolute inset-0 z-10 rounded-xl" aria-label={`Read the ${project.title} case study`}>
+            <span className="sr-only">Read the {project.title} case study</span>
+          </a>
+        )}
+
         {/* Top accent bar */}
         <div className="h-1 bg-gradient-to-r from-[#FF5733] to-[#FF8F6B] dark:from-[#FF6B47] dark:to-[#CC4527]"></div>
 
         <div className="p-5 sm:p-6">
+          {project.image && (
+            <div className="mb-5 overflow-hidden rounded-lg border border-gray-200 dark:border-[#30363D] bg-[#F6F8FA] dark:bg-[#0D1117]">
+              <img src={project.image} alt={project.imageAlt} className="w-full aspect-[16/9] object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
+            </div>
+          )}
+
           {/* Icon + title row */}
           <div className="flex items-start gap-3 mb-3">
             <span className="text-3xl select-none" role="img">{project.icon}</span>
@@ -106,16 +129,21 @@ function ProjectShuffle() {
             ))}
           </div>
 
-          {/* Link */}
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-base text-[#FF5733] dark:text-[#FF6B47] hover:underline font-medium"
-          >
-            {isGithub ? <FaGithub className="w-4 h-4" /> : <FaExternalLinkAlt className="w-3.5 h-3.5" />}
-            {project.linkLabel}
-          </a>
+          {project.caseStudy ? (
+            <span className="inline-flex items-center gap-1.5 text-base text-[#FF5733] dark:text-[#FF6B47] font-medium">
+              {project.linkLabel} <FaArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </span>
+          ) : (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-20 inline-flex items-center gap-1.5 text-base text-[#FF5733] dark:text-[#FF6B47] hover:underline font-medium"
+            >
+              {isGithub ? <FaGithub className="w-4 h-4" /> : <FaExternalLinkAlt className="w-3.5 h-3.5" />}
+              {project.linkLabel}
+            </a>
+          )}
         </div>
       </div>
 
