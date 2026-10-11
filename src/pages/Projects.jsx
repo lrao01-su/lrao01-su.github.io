@@ -81,14 +81,14 @@ function Projects() {
     {
       title: "Solar Plan",
       subtitle: "Full-stack web application",
-      problem: "Homeowners lack an easy way to assess whether solar makes financial sense for their specific property.",
-      approach: "Built a full-stack Next.js application that integrates Google Maps and Solar APIs. Users input an address and receive solar potential analysis with financial ROI modeling based on their property's geometry and sun exposure.",
+      problem: "Solar decisions are property-specific, but homeowners often have only generic savings claims—not a quick way to understand how many panels their roof can support or what a realistic system could produce.",
+      approach: "Built an authenticated Next.js application that turns a selected street address into a property-level solar assessment. The workflow uses Google Places and Geocoding to locate the building, Google Solar Building Insights to retrieve roof and sunlight data, and an interactive panel slider to compare annual energy production with estimated installation cost. Firebase Authentication and Firestore support saved projects.",
       impact: [
-        "Address-level solar potential assessment",
-        "Financial ROI modeling",
-        "Google Maps + Solar API integration"
+        "Address-to-building workflow using Google Places, Geocoding, Maps, and Solar APIs",
+        "Interactive panel scenarios with roof capacity, annual energy output, and installation cost",
+        "Authenticated project saving with Firebase Authentication and Firestore"
       ],
-      technologies: ["Next.js", "React", "Google Maps API", "Solar API"],
+      technologies: ["Next.js", "React", "Google Maps API", "Solar API", "Firebase"],
       relevance: ["Product Analyst", "Full-Stack"],
       image: "/solar-plan.jpg",
       imageAlt: "Solar Plan web application landing page",

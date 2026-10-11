@@ -49,9 +49,9 @@ const PROJECTS = [
   },
   {
     title: "Solar Plan",
-    subtitle: "Full-stack web application",
-    description: "Solar potential assessment for any address via Google APIs.",
-    technologies: ["Next.js", "React", "Google Maps API"],
+    subtitle: "Address-to-rooftop solar assessment",
+    description: "Geocode a property, retrieve roof-level solar data, and compare panel-count, energy, and cost scenarios.",
+    technologies: ["Next.js", "Solar API", "Firebase"],
     link: "https://milestone-3-lr534.vercel.app/",
     linkLabel: "Live Demo",
     image: "/solar-plan.jpg",
